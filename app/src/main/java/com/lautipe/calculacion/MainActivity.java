@@ -1,7 +1,28 @@
+package com.lautipe.calculacion;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView resultTextView;
-    private Button button0, button1, button2, button3, button4, button5, button6, button7, button8, button9, buttonPlus, buttonMinus, buttonMultiply, buttonDivide, buttonClear, buttonEquals;
+    private Button button2;
+    private Button button3;
+    private Button button4;
+    private Button button5;
+    private Button button6;
+    private Button button7;
+    private Button button8;
+    private Button button9;
+    private Button buttonPlus;
+    private Button buttonMinus;
+    private Button buttonMultiply;
+    private Button buttonDivide;
+    private Button buttonClear;
+    private Button buttonEquals;
 
     private String operand1, operand2;
     private String operator;
@@ -13,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
         resultTextView = findViewById(R.id.resultTextView);
 
-        button0 = findViewById(R.id.button0);
-        button1 = findViewById(R.id.button1);
+        Button button0 = findViewById(R.id.button0);
+        Button button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
@@ -149,17 +170,18 @@ public class MainActivity extends AppCompatActivity {
                 double num1 = Double.parseDouble(operand1);
                 double num2 = Double.parseDouble(operand2);
                 double result = 0.0;
-                if(operator.equals("+")){
+                if (operator.equals("+")) {
                     result = num1 + num2;
-                } else if(operator.equals("-")){
+                } else if (operator.equals("-")) {
                     result = num1 - num2;
-                } else if(operator.equals("*")){
+                } else if (operator.equals("*")) {
                     result = num1 * num2;
-                } else if(operator.equals("/")){
+                } else if (operator.equals("/")) {
                     result = num1 / num2;
-                    resultTextView.setText(Double.toString(result));
                 }
-            });
-        }
-    }
+                resultTextView.setText(Double.toString(result));
+            }
+        });
 
+    }
+}
