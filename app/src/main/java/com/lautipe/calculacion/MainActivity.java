@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 operand2 = resultTextView.getText().toString();
                 double num1 = Double.parseDouble(operand1);
-                double num2 = Double.parseDouble(operand2);
+                double num2 = operand2.isEmpty() ? 0.0 : Double.parseDouble(operand2);
                 double result = 0.0;
                 if (operator.equals("+")) {
                     result = num1 + num2;
@@ -182,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 resultTextView.setText(Double.toString(result));
             }
         });
+
 
     }
 }
